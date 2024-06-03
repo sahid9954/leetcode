@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int appendCharacters(string s, string t) {
+        queue<char>qe;
+        for(auto i:t){
+           qe.push(i);
+        }
+        for (char ch : s) {
+            if (!qe.empty() && ch == qe.front()) {
+                qe.pop();
+            }
+        }
+        return qe.size();
+    }
+};
